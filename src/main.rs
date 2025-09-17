@@ -20,9 +20,25 @@ static VERBOSE: AtomicBool = AtomicBool::new(false);
 #[derive(Parser)]
 #[command(name = "pypippark")]
 #[command(
-    about = "Manage a single, system-wide venv (Rust port)",
-    long_about = "Manage a single, system-wide venv (Rust port)\n\nEXAMPLES:\n  pypippark install requests flask\n  pypippark list\n  pypippark run ./script.py -- arg1 arg2\n  pypippark enter\n  pypippark check\n\nUse -v / --verbose for extra diagnostic output."
+    name = "pypippark",
+    version = "2.0.0-alpha",
+    about = "Manage a single, system-wide Python virtual environment (Rust port)",
+    long_about = r#"Manage a single, system-wide Python virtual environment (Rust port).
+
+EXAMPLES:
+  pypippark install requests flask
+  pypippark list
+  pypippark run ./script.py -- arg1 arg2
+  pypippark enter
+  pypippark check
+
+Use -V or --version to check version
+
+We value transparency and open-source collaboration. With that freedom comes responsibility:
+please test our tools in safe environments before production use. This product is provided as-is,
+without any warranty."#
 )]
+
 struct Cli {
     /// path to venv (overrides default)
     #[arg(long, global = true)]
@@ -35,7 +51,7 @@ struct Cli {
     /// verbose diagnostics
     #[arg(short, long, global = true)]
     verbose: bool,
-
+    
     #[command(subcommand)]
     cmd: Commands,
 }
