@@ -1,0 +1,10 @@
+[package]
+name = "pypippark"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+anyhow = "1.0"
+nix = { version = "0.29", features = ["fs", "user"] }
+whoami = "1.3"
