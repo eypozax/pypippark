@@ -23,17 +23,7 @@ static VERBOSE: AtomicBool = AtomicBool::new(false);
     name = "pypippark",
     version = "2.0.0-alpha",
     about = "Manage a single, system-wide Python virtual environment (Rust port)",
-    long_about = r#"Manage a single, system-wide Python virtual environment (Rust port).
-
-EXAMPLES:
-  pypippark install requests flask
-  pypippark list
-  pypippark run ./script.py -- arg1 arg2
-  pypippark enter
-  pypippark check
-
-Use -V or --version to check version
-
+    after_help = r#"
 We value transparency and open-source collaboration. With that freedom comes responsibility:
 please test our tools in safe environments before production use. This product is provided as-is,
 without any warranty."#
