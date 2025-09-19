@@ -24,6 +24,7 @@ static VERBOSE: AtomicBool = AtomicBool::new(false);
     version = "2.0.0-alpha",
     about = "Manage a single, system-wide Python virtual environment (Rust port)",
     after_help = r#"
+For more, visit the documentation page: https://eypozax.github.io/docs/pypippark/
 We value transparency and open-source collaboration. With that freedom comes responsibility:
 please test our tools in safe environments before production use. This product is provided as-is,
 without any warranty."#
